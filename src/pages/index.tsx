@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 
       <header className={styles.header}>
         <h1 className={styles.title}>ようこそ！</h1>
-        <h2>もてぃのサイトへ</h2>
+        <h2 className={styles.content}>もてぃのサイトへ</h2>
       </header>
 
       <main className={styles.main}>
