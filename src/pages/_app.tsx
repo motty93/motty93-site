@@ -1,10 +1,12 @@
 import { AppProps } from 'next/app'
 import Script from 'next/script'
 import Head from 'next/head'
-import { Header, Footer } from '@/components'
+import { RecoilRoot } from 'recoil'
+
+import { Header, Footer, Theme } from '@/components'
 import { config } from '@/site.config'
-import '@/styles/globals.scss'
 import { GA_TRACKING_ID } from '@/utils'
+import '@/styles/globals.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const title = config.siteMeta.title
@@ -21,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:site" content={title} />
         <meta name="description" content={description} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="color-scheme" content="light dark" />
         <link rel="canonical" href={pageUrl} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -52,4 +55,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+const MyAppWrapper = (props: AppProps) => (
+  <RecoilRoot>
+    <Theme>
+      <MyApp {...props} />
+    </Theme>
+  </RecoilRoot>
+)
+
+export default MyAppWrapper
