@@ -1,4 +1,5 @@
 @import 'reset.css';
+@import 'darkmode.css';
 
 html,
 body {
@@ -15,4 +16,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  color: var(--c-on-primary);
+  background-color: var(--c-primary);
 }

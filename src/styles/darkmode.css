@@ -1,0 +1,13 @@
+:root[data-theme="light"] {
+  color-scheme: light;
+  /* ライトテーマで適用するプロパティ値 */
+  --c-primary: #6750a4;
+  --c-on-primary: #625b71;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  /* ダークテーマで適用するプロパティ値 */
+  --c-primary: #d0bcff;
+  --c-on-primary: #ccc2dc;
+}
